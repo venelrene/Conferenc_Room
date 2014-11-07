@@ -1,0 +1,44 @@
+<%= form_for(@room, :html => {:multipart => true}) do |f| %>
+  <% if @room.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@room.errors.count, 'error') %> prohibited this room from being saved:</h2>
+
+      <ul>
+      <% @room.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div>
+    <div class="field">
+    <%= f.label :roomphoto %><br>
+    <%= image_tag(@room.roomphoto.url) if @room.roomphoto? %>
+    <%= f.file_field :roomphoto %>
+    <%= f.hidden_field :roomphoto_cache %>
+    <p>
+      <%= f.label :remote_roomphoto_url,  'or image URL' %><br>
+      <%= f.text_field :remote_roomphoto_url %>
+    </p>
+  </div>
+  </div>
+  <div class="field">
+    <%= f.label :squarefootage %><br>
+    <%= f.number_field :squarefootage %>
+  </div>
+  <div class="field">
+    <%= f.label :lastused %><br>
+    <%= f.date_select :lastused %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
