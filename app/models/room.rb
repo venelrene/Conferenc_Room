@@ -18,6 +18,8 @@
 class Room < ActiveRecord::Base
   validates :name, :location, presence: true
   attr_accessor :roomphoto, :roomphoto_cache, :remote_image_url
+  belongs_to :user
+  scope :for_user, ->(user) {where(user: user) }
   mount_uploader :roomphoto, RoomphotoUploader
 
 end
