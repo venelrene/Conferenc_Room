@@ -1,0 +1,64 @@
+<body><div id="infoBox" style="z-index: 360000; font-family: PT Sans, Trebushet MS, sans-serif; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(122, 189, 25,0.9)), to(rgba(102, 167, 16,0.9))); margin-top:-3em; position:fixed; top:3em; left: 0; float: left; width: 100%; color: #fff; padding: 1em; font-size: 11pt; height: 20px; display: none; text-align: left;">Select the blocks that you do not want to see on this page<div id="saveBlocksButton" style="color: #fff; text-shadow: none; cursor: pointer;display: inline;margin-left: 1.6em;padding: 0.5em 0.8em 0.5em 0.8em;background: rgb(102, 167, 16);border-radius: 5px;">Save</div><div id="cancelAddBlocksButton" style="color: #fff; text-shadow: none; cursor: pointer;display: inline;margin-left: 1.6em;padding: 0.5em 0.8em 0.5em 0.8em;background: rgb(102, 167, 16);border-radius: 5px;">Cancel</div></div>
+
+<div class="container" style="
+padding-left: 371px;
+
+        width: 1079px;
+        height: 265px;
+        margin-right: -;
+        margin-left: -;
+        margin-left: 0px;
+        margin-right: 0px;
+">
+
+  <%= form_tag signup_entry_path, class: 'form' do %>
+      <h2 class="form-signin-heading">Please sign up</h2>
+      <%= text_field_tag 'name',  nil, class: 'form-control', style:'margin-top: -;
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            width: 300px;
+            height: 44px;',  placeholder: 'Name' %>
+      <%= text_field_tag 'email',  nil, class: 'form-control', placeholder: 'Email', style: '
+    margin-top: -;
+
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            width: 300px;
+            height: 44px;
+    '%>
+      <%= text_field_tag 'password',  nil, class: 'form-control', placeholder: 'Password', style:'
+    width: 300px;
+            height: 44px;
+            padding-right: 10px;
+            padding-left: 10px;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            padding-top: 10px;
+    '%>
+      <%= password_field_tag 'Password_confirmation',  nil, class: 'form-control', placeholder: 'Password Confirmation', style: 'margin-top: -;
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            width: 300px;
+            height: 44px;' %>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <%= submit_tag 'Sign up', class: 'btn btn-lg btn-primary btn-block', style:'
+    width: 300px;' %>
+  <% end %>
+
+</div>
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+
+</body>

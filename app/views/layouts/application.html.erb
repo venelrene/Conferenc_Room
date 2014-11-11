@@ -5,20 +5,65 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"> Conference Room</a>
+      <ul class="nav navbar-nav">
+        <li class="active"><a <%= link_to 'Home', root_path %></a></li>
+        <li class="active"><a <%= link_to 'Rooms', rooms_path %></a></li>
+      </ul>
+    </div>
+    <div id="navbar" class="navbar-form navbar-right">
+        <% if signed_in? %>
+            <a class="btn btn-danger" <%= link_to 'signout', signout_path, method: :delete %>></a>
+        <% else %>
+            <%= form_tag signin_path, class: 'navbar-form navbar-right' do %>
+                <%= text_field_tag 'email', nil, class: 'form-control', placeholder: 'Email' %>
+                <%= password_field_tag 'password', nil, class: 'form-control', placeholder: 'Password' %>
+                <%= submit_tag 'sign in', class: 'btn btn-success' %>
+                <a class="btn btn-primary" <%= link_to 'Sign Up',  signup_path %>></a>
+            <% end %>
+        <% end %>
+    </div><!--/.navbar-collapse -->
+  </div>
+</nav>
 
-    <% if flash[:notice] %>
-        <div class="alert alert-success"><%= flash[:notice] %></div>
-    <% end %>
-    <% if flash[:error] %>
-        <div class="alert alert-danger"><%= flash[:error] %></div>
-    <% end %>
-    <% if flash[:warning] %>
-        <div class="alert alert-warning"><%= flash[:warning] %></div>
-    <% end %>
 
-    <%= yield %>
-
+<%= yield %>
 </body>
+   <% if flash[:notice] %>
+       <div class="alert alert-success"><%= flash[:notice] %></div>
+   <% end %>
+   <% if flash[:error] %>
+       <div class="alert alert-danger"><%= flash[:error] %></div>
+   <% end %>
+   <% if flash[:warning] %>
+       <div class="alert alert-warning"><%= flash[:warning] %></div>
+   <% end %>
+
+
+<br>
+<br>
+<footer>
+  <div class="row">
+    <div class="col-lg-12">
+      <p>Copyright © Conference Room 2014</p>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
 </html>

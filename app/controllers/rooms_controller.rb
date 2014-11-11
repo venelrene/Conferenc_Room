@@ -1,10 +1,18 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy]
+    # before_action :require_admin
 
   # GET /rooms
   # GET /rooms.json
+
+  def search
+    @rooms = Room.for_user(current_user).where("name like ?", "%#{params[:search_query]}%")
+    render :template => 'rooms/index'
+  end
+
+
   def index
-    @rooms = Room.all
+    @rooms = Room.all.order('name ASC')
   end
 
   # GET /rooms/1
@@ -25,7 +33,7 @@ class RoomsController < ApplicationController
   # POST /rooms.json
   def create
     @room = Room.new(room_params)
-    @room = current_user
+    # @room = current_user
 
     respond_to do |format|
       if @room.save
@@ -70,6 +78,6 @@ class RoomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def room_params
-      params.require(:room).permit(:name, :location, :photo, :description, :squarefootage, :lastused, :roomphoto, :roomphoto_cache, :remote_image_url, :user)
+      params.require(:room).permit(:name, :location, :photo, :description, :squarefootage, :lastused, :roomphoto, :roomphoto_cache,  :remote_roomphoto_url, :remote_image_url, :user)
     end
 end

@@ -25,7 +25,7 @@ class RoomphotoUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  process resize_to_fit: [200, 300]
+  process resize_to_fit: [700, 700]
   #
   # def scale(width, height)
   #   # do something
@@ -34,7 +34,18 @@ class RoomphotoUploader < CarrierWave::Uploader::Base
   # Create different versions of your uploaded files:
   version :thumb do
     process :resize_to_fit => [50, 50]
+    end
+
+  version :short do
+    process :resize_to_fit => [500, 300]
+    end
+
+   version :show do
+    process :resize_to_fit => [640, 500]
   end
+
+
+
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

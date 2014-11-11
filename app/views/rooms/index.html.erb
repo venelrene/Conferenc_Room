@@ -1,14 +1,16 @@
 <h1>Listing rooms</h1>
 
-<table>
+<%= form_tag search_rooms_path, class: 'navbar-form navbar-right' do %>
+    <%= text_field_tag 'search_query', nil, class: 'form-control' %>
+    <%= submit_tag 'Search', class: 'btn btn-primary btn-sm' %>
+<% end %>
+
+<table class="table table-striped">
   <thead>
     <tr>
+      <th>Photo</th>
       <th>Name</th>
       <th>Location</th>
-      <th>Photo</th>
-      <th>Description</th>
-      <th>Squarefootage</th>
-      <th>Lastused</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,23 +18,17 @@
   <tbody>
     <% @rooms.each do |room| %>
       <tr>
+        <td><%= image_tag room.roomphoto.url(:thumb) %> </td>
         <td><%= room.name %></td>
         <td><%= room.location %></td>
-        <td><%= image_tag room.roomphoto.url(:thumb) %> </td>
-        <td><%= room.description %></td>
-        <td><%= room.squarefootage %></td>
-        <td><%= room.lastused %></td>
-        <td><%= link_to 'Show', room %></td>
-        <td><%= link_to 'Edit', edit_room_path(room) %></td>
-        <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', room, class: 'glyphicon glyphicon-search' %></td>
+        <td><%= link_to 'Edit', edit_room_path(room), class: 'glyphicon glyphicon-edit' %></td>
+        <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' }, class: 'glyphicon glyphicon-remove' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
 <br>
 
 <%= link_to 'New Room', new_room_path %>
 <br>
-
-<%= link_to 'Home Page', root_path %>
