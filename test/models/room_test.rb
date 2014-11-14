@@ -13,6 +13,7 @@
 #  updated_at    :datetime
 #  roomphoto     :string(255)
 #  user_id       :integer
+#  campus_id     :integer
 #
 
 require 'test_helper'

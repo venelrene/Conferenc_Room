@@ -7,8 +7,9 @@
 #  email           :string(255)
 #  created_at      :datetime
 #  updated_at      :datetime
-#  role            :string(25)       default("user")
 #  password_digest :string(255)
+#  role            :string(25)       default("student")
+#  campus_id       :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

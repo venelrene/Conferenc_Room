@@ -7,18 +7,20 @@
 #  email           :string(255)
 #  created_at      :datetime
 #  updated_at      :datetime
-#  role            :string(25)       default("user")
 #  password_digest :string(255)
+#  role            :string(25)       default("student")
+#  campus_id       :integer
 #
 
 class User < ActiveRecord::Base
-  belongs_to :rooms
+  belongs_to :campus
+  has_many :reservations
 
   has_secure_password
 
-  validates :name, presence: true
+  validates :name,presence: true
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, presence: true,
+  validates :email,  presence: true,
             format: {with: VALID_EMAIL_REGEX },
             uniqueness: { case_sensitive: false}
 

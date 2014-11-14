@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141110193911) do
+ActiveRecord::Schema.define(version: 20141113191327) do
+
+  create_table "campuses", force: true do |t|
+    t.string   "name"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "phone_number"
+    t.integer  "zip_code"
+    t.string   "street_address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "campus_id"
+  end
+
+  add_index "campuses", ["campus_id"], name: "index_campuses_on_campus_id"
 
   create_table "conference_room_features", force: true do |t|
     t.datetime "created_at"
@@ -21,7 +35,22 @@ ActiveRecord::Schema.define(version: 20141110193911) do
   create_table "features", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
+
+  create_table "reservations", force: true do |t|
+    t.datetime "start_at"
+    t.datetime "ends_at"
+    t.text     "notes"
+    t.string   "event_title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "users_id"
+    t.integer  "user_id"
+  end
+
+  add_index "reservations", ["user_id"], name: "index_reservations_on_user_id"
+  add_index "reservations", ["users_id"], name: "index_reservations_on_users_id"
 
   create_table "rooms", force: true do |t|
     t.string   "name"
@@ -34,8 +63,10 @@ ActiveRecord::Schema.define(version: 20141110193911) do
     t.datetime "updated_at"
     t.string   "roomphoto"
     t.integer  "user_id"
+    t.integer  "campus_id"
   end
 
+  add_index "rooms", ["campus_id"], name: "index_rooms_on_campus_id"
   add_index "rooms", ["user_id"], name: "index_rooms_on_user_id"
 
   create_table "users", force: true do |t|
@@ -44,7 +75,10 @@ ActiveRecord::Schema.define(version: 20141110193911) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_digest"
-    t.string   "role",            limit: 25, default: "user"
+    t.string   "role",            limit: 25, default: "student"
+    t.integer  "campus_id"
   end
+
+  add_index "users", ["campus_id"], name: "index_users_on_campus_id"
 
 end

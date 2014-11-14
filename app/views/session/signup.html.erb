@@ -30,6 +30,8 @@ padding-left: 371px;
             width: 300px;
             height: 44px;
     '%>
+        <%= collection_select :name, :name_id, Campus.all, :id, :city, include_blank: 'Please Choose A Campus', class: "form-control", style: "width: 300px; height: 44px;" %>
+
       <%= text_field_tag 'password',  nil, class: 'form-control', placeholder: 'Password', style:'
     width: 300px;
             height: 44px;

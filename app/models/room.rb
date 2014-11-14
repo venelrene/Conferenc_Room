@@ -13,12 +13,16 @@
 #  updated_at    :datetime
 #  roomphoto     :string(255)
 #  user_id       :integer
+#  campus_id     :integer
 #
 
 class Room < ActiveRecord::Base
   validates :name, :location, presence: true
   attr_accessor :roomphoto, :roomphoto_cache, :remote_image_url
-  belongs_to :user
+  belongs_to :campus
+  has_many :reservations
+
+
   scope :for_user, ->(user) {where(user: user) }
   mount_uploader :roomphoto, RoomphotoUploader
 

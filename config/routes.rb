@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
+  resources :reservations
+
+  resources :campuses
+
   resources :features
+
+  resources :users
 
    resources :rooms do
      collection do

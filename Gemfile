@@ -64,3 +64,6 @@ gem 'annotate', '~> 2.6.5'
 
 # password gem
 gem 'bcrypt', '~> 3.1.7'
+
+# letter opener
+gem 'letter_opener', :group => :development
