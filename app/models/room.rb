@@ -21,6 +21,8 @@ class Room < ActiveRecord::Base
   attr_accessor :roomphoto, :roomphoto_cache, :remote_image_url
   belongs_to :campus
   has_many :reservations
+  has_many :features
+
 
 
   scope :for_user, ->(user) {where(user: user) }

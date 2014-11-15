@@ -41,7 +41,7 @@ class SessionController < ApplicationController
 
   def signout
     session[:user_id] = nil
-    flash[:warning] = "You have signed out!"
+    flash[:warning] = 'You have signed out!'
      redirect_to root_path
   end
 
