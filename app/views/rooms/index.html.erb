@@ -1,34 +1,42 @@
-<h1>Listing rooms</h1>
 
-<%= form_tag search_rooms_path, class: 'navbar-form navbar-right' do %>
-    <%= text_field_tag 'search_query', nil, class: 'form-control' %>
-    <%= submit_tag 'Search', class: 'btn btn-primary btn-sm' %>
-<% end %>
+<div class="container">
+  <h1>Listing rooms</h1>
+  <ol class="breadcrumb">
+    <li> <%= link_to 'Add Room', new_room_path %></li>
+    <li class="active">All Rooms</li>
+    <li>
+      <%= form_tag search_rooms_path, class: 'navbar-form' do %>
+          <%= text_field_tag 'search_query', nil, class: 'form-control' %>
+          <%= submit_tag 'Search', class: 'btn btn-primary btn-sm' %>
+      <% end %>
+    </li>
+  </ol>
+</div>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Photo</th>
-      <th>Name</th>
-      <th>Location</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @rooms.each do |room| %>
-      <tr>
-        <td><%= image_tag room.roomphoto.url(:thumb) %> </td>
-        <td><%= room.name %></td>
-        <td><%= room.location %></td>
-        <td><%= link_to 'Show', room, class: 'glyphicon glyphicon-search' %></td>
-        <td><%= link_to 'Edit', edit_room_path(room), class: 'glyphicon glyphicon-edit' %></td>
-        <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' }, class: 'glyphicon glyphicon-remove' %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
+<div class="container">
+  <% @rooms.each do |room| %>
 
-<%= link_to 'New Room', new_room_path %>
-<br>
+      <div class=class="row previews">
+      <div class="col-lg-4 col-sm-6">
+        <div class="thumbnail">
+          <a>
+            <%= image_tag room.roomphoto.url(:short) %>
+          </a>
+          <h3>
+            <a><%= link_to room.name, room %></a>
+          </h3>
+          <h5><%= room.location %></h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+          <p>
+            <a> <%= link_to 'Reserve Now!', reservations_path,  class: 'btn btn-success'%></a> <a> <%= link_to 'More Info', room, class: 'btn btn-default' %></a>
+          </p>
+        </div>
+      </div>
+
+      </div>
+  <% end %>
+</div>
+
+
+
