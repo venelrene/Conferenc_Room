@@ -20,8 +20,14 @@
     <div class="field">
       <%= f.label :campus %><br>
       <%= f.text_field :campus %>
-    </div>
+    </div class= "field">
+      <%=radio_button_tag(:role, 'student')%>
+      <%= label_tag(:student, 'I am a Student') %><br>
+      <%=radio_button_tag(:role, 'teacher')%>
+      <%= label_tag(:teacher, 'I am a Teacher') %>
+    <div>
 
+    </div>
 
   <div class="actions">
     <%= f.submit %>
