@@ -1,41 +1,44 @@
-<%= form_for(@campus) do |f| %>
-  <% if @campus.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@campus.errors.count, "error") %> prohibited this campus from being saved:</h2>
+<div class="container-fluid">
 
-      <ul>
-      <% @campus.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+  <%= form_for(@campus) do |f| %>
+      <% if @campus.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@campus.errors.count, "error") %> prohibited this campus from being saved:</h2>
+
+            <ul>
+              <% @campus.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :state %><br>
-    <%= f.text_field :state %>
-  </div>
-  <div class="field">
-    <%= f.label :phone_number %><br>
-    <%= f.number_field :phone_number %>
-  </div>
-  <div class="field">
-    <%= f.label :zip_code %><br>
-    <%= f.number_field :zip_code %>
-  </div>
-  <div class="field">
-    <%= f.label :street_address %><br>
-    <%= f.text_field :street_address %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+      <div class="field">
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+      </div>
+      <div class="field">
+        <%= f.label :city %><br>
+        <%= f.text_field :city %>
+      </div>
+      <div class="field">
+        <%= f.label :state %><br>
+        <%= f.text_field :state %>
+      </div>
+      <div class="field">
+        <%= f.label :phone_number %><br>
+        <%= f.number_field :phone_number %>
+      </div>
+      <div class="field">
+        <%= f.label :zip_code %><br>
+        <%= f.number_field :zip_code %>
+      </div>
+      <div class="field">
+        <%= f.label :street_address %><br>
+        <%= f.text_field :street_address %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+  <% end %>
+</div>

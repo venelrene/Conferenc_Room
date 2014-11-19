@@ -20,6 +20,7 @@ class Room < ActiveRecord::Base
   validates :name, :location, presence: true
   attr_accessor :roomphoto, :roomphoto_cache, :remote_image_url
   belongs_to :campus
+  belongs_to :user
   has_many :reservations
   has_many :features
 

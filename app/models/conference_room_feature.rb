@@ -8,7 +8,9 @@
 #
 
 class ConferenceRoomFeature < ActiveRecord::Base
-  has_many :rooms, :through => :conference_room_features
+  attr_accessible :feature_id, :room_id
+  belongs_to :rooms
+  belongs_to :feature
 
 
 end

@@ -10,7 +10,6 @@ class RoomsController < ApplicationController
     render :template => 'rooms/index'
   end
 
-
   def index
     @rooms = Room.all.order('name ASC')
   end
@@ -18,7 +17,7 @@ class RoomsController < ApplicationController
   # GET /rooms/1
   # GET /rooms/1.json
   def show
-    @feature = @room.features
+    @features = @room.features
   end
 
   # GET /rooms/new

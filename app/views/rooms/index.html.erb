@@ -5,7 +5,7 @@
     <li> <%= link_to 'Add Room', new_room_path %></li>
     <li class="active">All Rooms</li>
     <li>
-      <%= form_tag search_rooms_path, class: 'navbar-form' do %>
+      <%= form_tag search_rooms_path, class: 'navbar-form'  do %>
           <%= text_field_tag 'search_query', nil, class: 'form-control' %>
           <%= submit_tag 'Search', class: 'btn btn-primary btn-sm' %>
       <% end %>
@@ -29,7 +29,7 @@
           <h5><%= room.location %></h5>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
           <p>
-            <a> <%= link_to 'Reserve Now!', reservations_path,  class: 'btn btn-success'%></a> <a> <%= link_to 'More Info', room, class: 'btn btn-default' %></a>
+            <a> <%= link_to 'Reserve Now!', new_reservation_path,  class: 'btn btn-success'%></a> <a> <%= link_to 'More Info', room, class: 'btn btn-default' %></a>
           </p>
         </div>
       </div>
