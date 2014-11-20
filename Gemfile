@@ -67,3 +67,5 @@ gem 'bcrypt', '~> 3.1.7'
 
 # letter opener
 gem 'letter_opener', :group => :development
+# for fast webserver & pushing to heroku
+gem 'thin', '~> 1.6.3'

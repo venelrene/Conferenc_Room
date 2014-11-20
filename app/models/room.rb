@@ -22,7 +22,8 @@ class Room < ActiveRecord::Base
   belongs_to :campus
   belongs_to :user
   has_many :reservations
-  has_many :features
+  has_many :conference_room_features
+  has_many :features, through: :conference_room_features
 
 
 

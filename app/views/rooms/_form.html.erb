@@ -42,8 +42,14 @@
         <%= f.date_select :lastused %>
       </div>
       <div class="field">
-        <%= f.label :feature%><br>
-        <%= collection_check_boxes(:post, :feature, Feature.all, :id, :name ) %>
+        <%= f.label :feature %>
+        <%= hidden_field_tag "room[feature_ids][]", nil %>
+        <% Feature.all.each do |feature| %><br>
+            <%= label_tag dom_id(feature)  do %>
+                <%= check_box_tag "room[feature_ids][]", feature.id, @room.feature_ids.include?(feature.id), id: dom_id(feature)  %>
+                <%= feature.name %>
+            <% end %>
+        <% end %>
       </div>
       <br>
       <div class="actions">

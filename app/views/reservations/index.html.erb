@@ -3,7 +3,9 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Start at</th>
+      <th>Rooms</th>
+      <th>User</th>
+      <th>Starts at</th>
       <th>Ends at</th>
       <th>Notes</th>
       <th>Event title</th>
@@ -14,7 +16,9 @@
   <tbody>
     <% @reservations.each do |reservation| %>
       <tr>
-        <td><%= reservation.start_at %></td>
+        <td><%= reservation.room.name if reservation.room %></td>
+        <td><%= reservation.user_id.name if reservation.user_id%></td>
+        <td><%= reservation.starts_at %></td>
         <td><%= reservation.ends_at %></td>
         <td><%= reservation.notes %></td>
         <td><%= reservation.event_title %></td>

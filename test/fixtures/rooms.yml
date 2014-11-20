@@ -19,17 +19,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  location: MyString
-  photo: MyString
+  name: home
+  location: yard
+  photo: gif
   description: MyText
   squarefootage: 1
   lastused: 2014-11-07
+  user: one
+  campus: one
 
 two:
-  name: MyString
-  location: MyString
-  photo: MyString
+  name: home
+  location: yard
+  photo: gif
   description: MyText
-  squarefootage: 1
+  squarefootage: 33
   lastused: 2014-11-07
+  user: two
+  campus: two

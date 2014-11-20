@@ -7,6 +7,7 @@ class ReservationsController < ApplicationController
     @reservations = Reservation.all
   end
 
+
   # GET /reservations/1
   # GET /reservations/1.json
   def show
@@ -69,6 +70,6 @@ class ReservationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reservation_params
-      params.require(:reservation).permit(:start_at, :ends_at, :notes, :event_title)
+      params.require(:reservation).permit(:starts_at, :ends_at, :notes, :event_title, :user_id, :user, :room_id)
     end
 end

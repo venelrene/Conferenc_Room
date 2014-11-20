@@ -5,6 +5,8 @@
 #  id         :integer          not null, primary key
 #  created_at :datetime
 #  updated_at :datetime
+#  room_id    :integer
+#  feature_id :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

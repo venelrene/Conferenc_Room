@@ -17,17 +17,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  city: MyString
-  state: MyString
-  phone_number: 1
-  zip_code: 1
-  street_address: MyString
+  name: stpetes
+  city: tampa
+  state: fl
+  phone_number: 1332221112
+  zip_code: 12222
+  street_address: 302 n south
 
 two:
-  name: MyString
-  city: MyString
-  state: MyString
-  phone_number: 1
-  zip_code: 1
-  street_address: MyString
+  name: stpetes
+  city: tampa
+  state: fl
+  phone_number: 1332221112
+  zip_code: 12222
+  street_address: 302 n south

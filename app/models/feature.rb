@@ -9,7 +9,7 @@
 #
 
 class Feature < ActiveRecord::Base
-  validates :name, presence: true
+  has_many :conference_room_features
   has_many :rooms, :through => :conference_room_features
 
 
