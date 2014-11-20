@@ -6,11 +6,11 @@
      <div class="col-md-4">
         <%= form_tag signup_entry_path, class: 'form' do %>
         <h2 class="form-signin-heading">Please sign up</h2>
-        <%= text_field_tag 'name',  nil, class: 'form-control', placeholder: 'Name' %>
-        <%= text_field_tag 'email',  nil, class: 'form-control', placeholder: 'Email' %>
-        <%= collection_select :name, :name_id, Campus.all, :id, :city, include_blank: 'Please Choose A Campus', class: "form-control", style: "width: 300px; height: 44px;" %>
-        <%= text_field_tag 'password',  nil, class: 'form-control', placeholder: 'Password'%>
-        <%= password_field_tag 'Password_confirmation',  nil, class: 'form-control', placeholder: 'Password Confirmation' %>
+        <%= text_field 'user',  'name', class: 'form-control', placeholder: 'Name' %>
+        <%= text_field 'user',  'email', class: 'form-control', placeholder: 'Email' %>
+        <%= collection_select 'user', 'campus', Campus.all, :id, :city, include_blank: 'Please Choose A Campus', class: "form-control", style: "width: 300px; height: 44px;" %>
+        <%= password_field 'user',  'password', class: 'form-control', placeholder: 'Password'%>
+        <%= password_field 'user',  'password_confirmation', class: 'form-control', placeholder: 'Password Confirmation' %>
         <div class="checkbox">
             <label>
             <input type="checkbox" value="remember-me"> Remember me

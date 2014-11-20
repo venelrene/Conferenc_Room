@@ -8,11 +8,7 @@ class SessionController < ApplicationController
   end
 
   def signup_entry
-    user = User.new(name: params[:name],
-                    email: params[:email],
-                    campus: params[:campus],
-                    password: params[:password],
-                    password_confirmation: params[:password_confirmation])
+    user = User.new(user_params)
     if user.save
       session[:user_id] = user.id
       flash[:notice] = 'You have successfully signed up'
@@ -45,5 +41,11 @@ class SessionController < ApplicationController
      redirect_to root_path
   end
 
+  private
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def user_params
+    params[:user].permit(:campus_id, :password, :password_confirmation, :email, :name)
+  end
 
 end
