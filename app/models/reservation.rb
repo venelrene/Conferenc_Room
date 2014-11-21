@@ -15,7 +15,7 @@
 #
 
 class Reservation < ActiveRecord::Base
-  # validates :starts_at, :ends_at, :user_id, :event_title, presence: true
+ validates :starts_at, :ends_at, :user_id, :room_id, presence: true
   belongs_to :room
   belongs_to :user
 

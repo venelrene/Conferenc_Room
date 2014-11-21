@@ -17,7 +17,7 @@
     <% @reservations.each do |reservation| %>
       <tr>
         <td><%= reservation.room.name if reservation.room %></td>
-        <td><%= reservation.user_id.name if reservation.user_id%></td>
+        <td><%= reservation.user.name if reservation.user_id%></td>
         <td><%= reservation.starts_at %></td>
         <td><%= reservation.ends_at %></td>
         <td><%= reservation.notes %></td>
