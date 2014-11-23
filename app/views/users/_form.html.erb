@@ -15,10 +15,11 @@
       <div class="field">
         <%= f.label :name %><br>
         <%= f.text_field :name %>
-      </div><div class="field">
-  <%= f.label :email %><br>
-  <%= f.text_field :email %>
-</div>
+      </div>
+      <div class="field">
+        <%= f.label :email %><br>
+        <%= f.text_field :email %>
+      </div>
       <div class="field">
         <%= f.label :campus %><br>
         <%= f.text_field :campus %>
@@ -28,6 +29,15 @@
       <%=radio_button_tag(:role, 'teacher')%>
       <%= label_tag(:teacher, 'I am a Teacher') %>
       <div>
+      </div>
+      <div class="field">
+        <%= f.label :password %><br>
+        <%= f.password_field :password %>
+      </div>
+      <div class="field">
+        <%= f.label :password_confirmation %><br>
+        <%= f.password_field :password_confirmation %>
+      </div>
 
       </div>
 
@@ -35,4 +45,4 @@
         <%= f.submit %>
       </div>
   <% end %>
-</div>
+  </div>
