@@ -31,7 +31,7 @@
       </div>
       <div class="field">
         <%= f.label :campus %><br>
-        <%= f.text_field :campus %>
+        <%= f.select :campus_id, Campus.all.collect{ |i| [i.name, i.id]}%>
       </div>
       <div class="field">
         <%= f.label :squarefootage %><br>
