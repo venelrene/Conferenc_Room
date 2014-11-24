@@ -48,16 +48,15 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
-
+# for images and upload
 gem 'mini_magick'
-
 gem 'carrierwave'
 gem "fog"
 
 gem 'nokogiri', '~> 1.6.3.1'
-
+# page number and stuff
 gem 'kaminari'
-
+# for fake data
 gem  'faker'
 
 gem 'annotate', '~> 2.6.5'

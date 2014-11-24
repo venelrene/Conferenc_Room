@@ -6,7 +6,7 @@ class RoomsController < ApplicationController
   # GET /rooms.json
 
   def search
-    @rooms = Room.for_user(current_user).where("name like ?", "%#{params[:search_query]}%")
+    @rooms = Room.for_user(signed_in?).where("name like ?", "%#{params[:search_query]}%")
     render :template => 'rooms/index'
   end
 
