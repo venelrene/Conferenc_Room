@@ -3,7 +3,7 @@
   <h1>Listing rooms</h1>
   <ol class="breadcrumb">
     <li> <%= link_to 'Add Room', new_room_path %></li>
-    <li class="active">All Rooms</li>
+    <li ><%= link_to 'All Rooms', rooms_path  %></li>
     <li>
       <%= form_tag search_rooms_path, class: 'navbar-form'  do %>
           <%= text_field_tag 'search_query', nil, class: 'form-control' %>
