@@ -22,25 +22,25 @@
         <li class="active"><a <%= link_to 'Home', root_path %></a></li>
         <li class="active"><a <%= link_to 'Rooms', rooms_path %></a></li>
         <% if signed_in? %>
-        <li class="active"><a <%= link_to 'Campus', campuses_path %></a></li>
-        <li class="active"><a <%= link_to 'Reservation', reservations_path %></a></li>
+            <li class="active"><a <%= link_to 'Campus', campuses_path %></a></li>
+            <li class="active"><a <%= link_to 'Reservation', reservations_path %></a></li>
             <% if signed_in? && current_user.admin? %>
-      <li class="active"><a <%= link_to 'Users', users_path %></a></li>
+                <li class="active"><a <%= link_to 'Users', users_path %></a></li>
             <% end %>
         <% end %>
       </ul>
     </div>
     <div id="navbar" class="navbar-form navbar-right">
-        <% if signed_in? %>
-            <a class="btn btn-danger" <%= link_to 'signout', signout_path, method: :delete %>></a>
-        <% else %>
-            <%= form_tag signin_path, class: 'navbar-form navbar-right' do %>
-                <%= text_field_tag 'email', nil, class: 'form-control', placeholder: 'Email' %>
-                <%= password_field_tag 'password', nil, class: 'form-control', placeholder: 'Password' %>
-                <%= submit_tag 'sign in', class: 'btn btn-success' %>
-                <a class="btn btn-primary" <%= link_to 'Sign Up',  signup_path %>></a>
-            <% end %>
-        <% end %>
+      <% if signed_in? %>
+          <a class="btn btn-danger" <%= link_to 'signout', signout_path, method: :delete %>></a>
+      <% else %>
+          <%= form_tag signin_path, class: 'navbar-form navbar-right' do %>
+              <%= text_field_tag 'email', nil, class: 'form-control', placeholder: 'Email' %>
+              <%= password_field_tag 'password', nil, class: 'form-control', placeholder: 'Password' %>
+              <%= submit_tag 'sign in', class: 'btn btn-success' %>
+              <a class="btn btn-primary" <%= link_to 'Sign Up',  signup_path %>></a>
+          <% end %>
+      <% end %>
     </div><!--/.navbar-collapse -->
   </div>
 </nav>
@@ -48,15 +48,15 @@
 
 <%= yield %>
 </body>
-   <% if flash[:notice] %>
-       <div class="alert alert-success"><%= flash[:notice] %></div>
-   <% end %>
-   <% if flash[:error] %>
-       <div class="alert alert-danger"><%= flash[:error] %></div>
-   <% end %>
-   <% if flash[:warning] %>
-       <div class="alert alert-warning"><%= flash[:warning] %></div>
-   <% end %>
+<% if flash[:notice] %>
+    <div class="alert alert-success"><%= flash[:notice] %></div>
+<% end %>
+<% if flash[:error] %>
+    <div class="alert alert-danger"><%= flash[:error] %></div>
+<% end %>
+<% if flash[:warning] %>
+    <div class="alert alert-warning"><%= flash[:warning] %></div>
+<% end %>
 
 
 <br>
