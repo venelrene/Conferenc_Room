@@ -42,6 +42,10 @@
         <%= f.date_select :lastused %>
       </div>
       <div class="field">
+        <%= f.label :description %><br>
+        <%= f.text_field :description %>
+      </div>
+      <div class="field">
         <%= f.label :feature %>
         <%= hidden_field_tag "room[feature_ids][]", nil %>
         <% Feature.all.each do |feature| %><br>
