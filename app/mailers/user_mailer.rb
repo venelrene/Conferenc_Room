@@ -6,7 +6,7 @@ class UserMailer < ActionMailer::Base
       if Rails.env.development?
         @url = 'http://localhost:3000/rooms'
       else
-        @url = 'http://conferenceroom.dev/'
+        @url = 'https://conferenceroom.herokuapp.com/'
       end
     mail(to: @user.email, subject: 'Welcome to My Awesome Site')
   end
