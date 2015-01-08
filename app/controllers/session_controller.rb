@@ -12,6 +12,7 @@ class SessionController < ApplicationController
     if user.save
       session[:user_id] = user.id
       flash[:notice] = 'You have successfully signed up'
+      UserMailer.welcome_email(user).deliver
     else
       flash[:error] = "We are unable to sign you up. #{user.errors.full_messages.join('. ')}."
     end

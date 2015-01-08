@@ -17,3 +17,5 @@
 
 /.env
 .idea/workspace.xml
+
+.idea/conference_room.iml
