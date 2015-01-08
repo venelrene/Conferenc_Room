@@ -1,8 +1,27 @@
+<body id="background">
 
-<div class="jumbotron">
-  <div class="container">
-    <h1>Welcome <%= '' + current_user.name if current_user %>!</h1>
-    <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+
+<div class="site-wrapper">
+
+  <div class="site-wrapper-inner">
+
+    <div class="cover-container">
+
+      <div class="masthead clearfix">
+        <div class="inner">
+        </div>
+      </div>
+
+      <div class="inner cover">
+        <h1 id="head" class="cover-heading">Welcome to The Conference Room </h1>
+        <p class="lead">
+          <a> <%= link_to "ENTER HERE", rooms_path, class: "btn btn-lg btn-success" %></a>
+        </p>
+      </div>
+
+    </div>
+
   </div>
 
 </div>
+</body>
