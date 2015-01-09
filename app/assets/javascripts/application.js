@@ -15,3 +15,9 @@
 //= require turbolinks
 //= require_tree .
 
+ $(document).on('page:change', function() {
+     $("#room_table tr:even").css({'background-color': 'lightblue'});
+
+   });
+
+
