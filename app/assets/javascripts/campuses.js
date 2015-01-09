@@ -4,4 +4,4 @@
 
 $(document).on('page:change', function(){
 
-$("#room_table tr:odd").css({'background-color': 'lightblue'});
+$("#room_table tr:even").css({'background-color': 'lightblue'});
