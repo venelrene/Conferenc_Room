@@ -68,3 +68,5 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'letter_opener', :group => :development
 # for fast webserver & pushing to heroku
 gem 'thin', '~> 1.6.3'
+# for jquery "if your riding Ruby on Rails V3.11 and get the error"
+gem 'therubyracer'
