@@ -24,13 +24,16 @@
       <p><%= @room.description %> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
       <h3>Room Details</h3>
       <ul id="room_info" >
-        <li>Location: <%= @room.location %></li>
-        <li>Last Date Rented: <%= @room.lastused %></li>
-        <li>Features:</li>
+        <p>Location: <%= @room.location %></p>
+        <p>Last Date Rented: <%= @room.lastused %></p>
+        <p>Features:</p>
             <%=@feature %>
-        <li id="footage" data-sqfootage="<%= @room.squarefootage %>" >
-          <button class="btn btn-sm btn-primary" >Click to show square footage</button>
-        </li>
+        <p id="footage" data-sqfootage="<%= @room.squarefootage %>" >
+          <button class="btn btn-sm btn-primary">Click to show square footage</button>
+        </p>
+        <p>
+          <%= link_to "Reserve Now!", new_reservation_path, class:"btn btn-sm btn-success" %>
+        </p>
       </ul>
     </div>
 
