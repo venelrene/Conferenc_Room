@@ -22,19 +22,9 @@ $(document).on('page:change', function() {
 
 $(document).on('page:change', function() {
     $("button").on("click", function(){
-    var sqfeet = $("<p> <%= @room.squarefootage %> </p>");
-    $("#room_info").append(sqfeet);
-    $("button").remove();
+    var sqfeet = $(this).closest("#footage").data("sqfootage");
+    var message = $("<span> Square feet: " + sqfeet + "</span>");
+    $(this).closest("#room_info").append(message).find("button").remove();
     });
 });
-
-//$(document).on('page:change', function() {
-//  $("button").on("click", function(){
-//    var sqfeet = $(this).closest(".footage").data("sqfootage");
-//    var message = $("<span>" + sqfeet + "sqft</span>");
-//    $(this).closest(".footage").append(message);
-//    $(this).remove();
-//  });
-//});
-
 

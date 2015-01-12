@@ -28,8 +28,8 @@
         <li>Last Date Rented: <%= @room.lastused %></li>
         <li>Features:</li>
             <%=@feature %>
-        <li id="footage"> Square Footage: <%= @room.squarefootage %>
-          <button class="show">Click to show square footage</button>
+        <li id="footage" data-sqfootage="<%= @room.squarefootage %>" >
+          <button class="btn btn-sm btn-primary" >Click to show square footage</button>
         </li>
       </ul>
     </div>
