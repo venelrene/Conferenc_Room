@@ -1,10 +1,12 @@
 class CampusesController < ApplicationController
   before_action :set_campus, only: [:show, :edit, :update, :destroy]
 
+
   # GET /campuses
   # GET /campuses.json
   def index
     @campuses = Campus.all
+    @room = Room.all
   end
 
   # GET /campuses/1
@@ -69,6 +71,6 @@ class CampusesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def campus_params
-      params.require(:campus).permit(:name, :city, :state, :phone_number, :zip_code, :street_address)
+      params.require(:campus).permit(:name, :city, :state, :phone_number, :zip_code, :street_address, :roomphoto, )
     end
 end
