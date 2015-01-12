@@ -23,18 +23,14 @@
       <h3><%= @room.name %></h3>
       <p><%= @room.description %> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
       <h3>Room Details</h3>
-      <ul>
+      <ul id="room_info" >
         <li>Location: <%= @room.location %></li>
-        <li>Square Footage: <%= @room.squarefootage %></li>
         <li>Last Date Rented: <%= @room.lastused %></li>
         <li>Features:</li>
             <%=@feature %>
-        <ul>
-          <%= %>
-          <li>
-
-          </li>
-        </ul>
+        <li id="footage"> Square Footage: <%= @room.squarefootage %>
+          <button class="show">Click to show square footage</button>
+        </li>
       </ul>
     </div>
 

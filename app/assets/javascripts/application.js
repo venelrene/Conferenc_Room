@@ -15,9 +15,26 @@
 //= require turbolinks
 //= require_tree .
 
- $(document).on('page:change', function() {
-     $("#room_table tr:even").css({'background-color': 'lightblue'});
+$(document).on('page:change', function() {
+    $("#room_table tr:even").css({'background-color': 'lightblue'});
 
-   });
+});
+
+$(document).on('page:change', function() {
+    $("button").on("click", function(){
+    var sqfeet = $("<p> <%= @room.squarefootage %> </p>");
+    $("#room_info").append(sqfeet);
+    $("button").remove();
+    });
+});
+
+//$(document).on('page:change', function() {
+//  $("button").on("click", function(){
+//    var sqfeet = $(this).closest(".footage").data("sqfootage");
+//    var message = $("<span>" + sqfeet + "sqft</span>");
+//    $(this).closest(".footage").append(message);
+//    $(this).remove();
+//  });
+//});
 
 
