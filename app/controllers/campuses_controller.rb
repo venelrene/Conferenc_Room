@@ -6,7 +6,6 @@ class CampusesController < ApplicationController
   # GET /campuses.json
   def index
     @campuses = Campus.all
-    @room = Room.all
   end
 
   # GET /campuses/1

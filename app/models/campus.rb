@@ -19,4 +19,6 @@ class Campus < ActiveRecord::Base
   has_many :users
   has_many :rooms
 
+  mount_uploader :roomphoto, RoomphotoUploader
+
 end

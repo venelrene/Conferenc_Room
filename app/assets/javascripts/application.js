@@ -19,7 +19,19 @@
 $(document).on('page:change', function() {
     $("#room_table tr:even").css({'background-color': 'lightblue'});
 
+    //--------Campus index gylph icon show image----------
+    $('.campus').on('click', 'span', function() {
+            $(this).next('.photos').slideToggle("slow");
+        });
+
+     //-------
+     $('span.glyphicon').on('mouseenter', function() {
+        $(this).animate({"top": "10px"})
+        }).on('mouseleave', function(){
+            $(this).animate({"top": "0px"});
+        });
 });
+
 
 //--------Square feet button-----------------
 $(document).on('page:change', function() {
@@ -30,6 +42,8 @@ $(document).on('page:change', function() {
     });
 });
 
+
+
 //--------Nav Bar----------------------------
 $(document).on('page:change', function() {
     $('li.hover').hover( function() {
@@ -37,21 +51,7 @@ $(document).on('page:change', function() {
     }, function() {
         $(this).find('a').text("Conference Room");
     });
-
-   // $('li.active').on('mouseenter', function() {
-   //    $(this).animate({"top": "10px"})
-   // }).on('mouseleave', function(){
-   //        $(this).animate({"top": "0px"});
-   // });
 });
 
 
 
-
-//--------Campus index gylph icon show image----------
-//$(document).on('page:change', function() {
-//  $("#campus").on("click", "button", function() {
-////    $(this).closest("#campus").find(".photos").slideToggle();
-//      $(".photos").slideToggle();
-//  });
-//});

@@ -16,7 +16,12 @@
 
   <tbody>
     <% @campuses.each do |campus| %>
-      <tr>
+  <tr class="campus">
+        <td>
+          <span class="glyphicon glyphicon-camera" title="Show Photo"></span>
+          <img src="http://cdn.eluniversal.com/2013/07/26/tampa.100.100.jpg" class="photos">
+
+        </td>
         <td><%= campus.name %></td>
         <td><%= campus.city %></td>
         <td><%= campus.state %></td>
@@ -27,7 +32,7 @@
         <td><%= link_to 'Edit', edit_campus_path(campus) %></td>
         <td><%= link_to 'Destroy', campus, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
+  <% end %>
   </tbody>
 </table>
 
