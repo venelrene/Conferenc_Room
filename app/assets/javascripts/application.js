@@ -24,7 +24,7 @@ $(document).on('page:change', function() {
             $(this).next('.photos').slideToggle("slow");
         });
 
-     //-------
+     //-------Campus animation-----------
      $('span.glyphicon').on('mouseenter', function() {
         $(this).animate({"top": "10px"})
         }).on('mouseleave', function(){
