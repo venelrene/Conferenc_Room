@@ -16,31 +16,31 @@
 //= require_tree .
 
 //--------Table stripe color----------------
-$(document).on('page:change', function() {
-    $("#room_table tr:even").css({'background-color': 'lightblue'});
-
-    //--------Campus index gylph icon show image----------
-    $('.campus').on('click', 'span', function() {
-            $(this).next('.photos').slideToggle("slow");
-        });
-
-     //-------Campus animation-----------
-     $('span.glyphicon').on('mouseenter', function() {
-        $(this).animate({"top": "10px"})
-        }).on('mouseleave', function(){
-            $(this).animate({"top": "0px"});
-        });
-});
+//$(document).on('page:change', function() {
+//    $("#room_table tr:even").css({'background-color': 'lightblue'});
+//
+//    //--------Campus index gylph icon show image----------
+//    $('.campus').on('click', 'span', function() {
+//            $(this).next('.photos').slideToggle("slow");
+//        });
+//
+//     //-------Campus animation-----------
+//     $('span.glyphicon').on('mouseenter', function() {
+//        $(this).animate({"top": "10px"})
+//        }).on('mouseleave', function(){
+//            $(this).animate({"top": "0px"});
+//        });
+//});
 
 
 //--------Square feet button-----------------
-$(document).on('page:change', function() {
-    $("button").on("click", function(){
-    var sqfeet = $(this).closest("#footage").data("sqfootage");
-    var message = $("<span> Square feet: " + sqfeet + "</span>");
-    $(this).closest("#room_info").append(message).find("button").remove();
-    });
-});
+//$(document).on('page:change', function() {
+//    $("button").on("click", function(){
+//    var sqfeet = $(this).closest("#footage").data("sqfootage");
+//    var message = $("<span> Square feet: " + sqfeet + "</span>");
+//    $(this).closest("#room_info").append(message).find("button").remove();
+//    });
+//});
 
 
 
