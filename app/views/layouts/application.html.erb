@@ -19,6 +19,7 @@
       <ul class="nav navbar-nav">
         <li class="hover"><a <%= link_to 'Conference Room', root_path, class:"navbar-brand" %></a></li>
         <li class="active"><a <%= link_to 'Rooms', rooms_path %></a></li>
+        <li class="active"><a class="typeform-share link" href="https://venel.typeform.com/to/obxk9a" data-mode="2" target="_blank">Comments</a> </li>
         <% if signed_in? %>
             <li class="active"><a <%= link_to 'Campus', campuses_path %></a></li>
             <li class="active"><a <%= link_to 'Reservation', reservations_path %></a></li>
@@ -37,7 +38,7 @@
               <%= password_field_tag 'password', nil, class: 'form-control', placeholder: 'Password' %>
               <%= submit_tag 'sign in', class: 'btn btn-success' %>
               <a class="btn btn-primary" <%= link_to 'Sign Up',  signup_path %></a>
-          <% end %>
+    <% end %>
       <% end %>
     </div><!--/.navbar-collapse -->
   </div>
@@ -51,6 +52,7 @@
 
 <%= render 'layouts/notices' %>
 
+<script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})()</script>
 
 
 </html>
