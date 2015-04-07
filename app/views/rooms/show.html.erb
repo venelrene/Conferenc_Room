@@ -27,9 +27,11 @@
         <p>Location: <%= @room.location %></p>
         <p>Last Date Rented: <%= @room.lastused %></p>
         <p>Features:</p>
-            <%= @room.features.each do |feature| %>
-            <%= feature.feature  %>
-           <% end  %>
+            <ul>
+              <% @room.features.each do |feature| %>
+                  <li> <%= feature.name  %> </li>
+              <% end  %>
+            </ul>
         <p id="footage" data-sqfootage="<%= @room.squarefootage %>" >
           <button class="btn btn-sm btn-primary">Click to show square footage</button>
         </p>
