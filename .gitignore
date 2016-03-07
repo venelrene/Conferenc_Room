@@ -21,3 +21,7 @@
 .idea/conference_room.iml
 
 *.xml
+
+.idea/.generators
+
+*.xml
